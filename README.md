@@ -18,3 +18,21 @@
 
 # Full Adder
 ![Screenshot](007_Full-Adder.png)
+
+# Multi-bit Adder
+![Screenshot](008_Multi-bit-Adder.png)
+
+# Increment
+![Screenshot](009_Increment.png)
+
+# Subtraction
+![Screenshot](010_Subtraction.png)
+
+# Equal to Zero
+![Screenshot](011_Equal-to-Zero.png)
+
+# Less than Zero
+![Screenshot](012_Less-than-Zero.png)
+
+
+
