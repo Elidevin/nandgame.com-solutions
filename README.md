@@ -34,5 +34,10 @@
 # Less than Zero
 ![Screenshot](012_Less-than-Zero.png)
 
+# Selector
+![Screenshot](013_Selector.png)
+
+# Switch
+![Screenshot](014_Switch.png)
 
 
