@@ -40,4 +40,19 @@
 # Switch
 ![Screenshot](014_Switch.png)
 
+# Latch
+![Screenshot](015_Latch.png)
+
+# Data Flip-Flop
+![Screenshot](016_Data-Flip-Flop.png)
+
+# Register
+![Screenshot](017_Register.png)
+
+# Counter
+![Screenshot](018_Counter.png)
+
+# RAM
+![Screenshot](019_RAM.png)
+
 
