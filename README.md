@@ -73,6 +73,6 @@
 ![Screenshot](024_Combined-Memory.png)
 
 # Instruction Decoder
-![Screenshot](025_Instuction-Decoder.png)
+![Screenshot](025_Instruction-Decoder.png)
 
 
