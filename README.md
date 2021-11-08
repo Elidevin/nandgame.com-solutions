@@ -75,4 +75,14 @@
 # Instruction Decoder
 ![Screenshot](025_Instruction-Decoder.png)
 
+# Control Unit
+![Screenshot](026_Control-Unit.png)
+
+# Computer
+![Screenshot](027_Computer.png)
+
+# Input and Output
+![Screenshot](028_Input-and-Output.png)
+
+
 
