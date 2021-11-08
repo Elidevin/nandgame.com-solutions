@@ -48,11 +48,25 @@
 
 # Register
 ![Screenshot](017_Register.png)
+![Screenshot](017_Register_min_nands.png)
 
 # Counter
 ![Screenshot](018_Counter.png)
 
 # RAM
 ![Screenshot](019_RAM.png)
+
+# Unary ALU
+![Screenshot](020_Unary-ALU.png)
+
+# ALU
+![Screenshot](021_ALU.png)
+![Screenshot](021_ALU_min_nands.png)
+
+# Opcodes
+![Screenshot](022_Opcodes.png)
+
+# Condition
+![Screenshot](023_Condition.png)
 
 
