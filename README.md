@@ -97,6 +97,6 @@ A = 0x7FFF
 A = loop
 JMP
 ```
-![Screenshot](30_Assembler.png)
+![Screenshot](030_Assembler.png)
 
 
