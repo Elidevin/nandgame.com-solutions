@@ -1,93 +1,110 @@
-# Nand
-![Screenshot](001_Nand.png)
+# Best solutions for [nandgame.com](http://nandgame.com/)
 
-# Invert
-![Screenshot](002_Invert.png)
+* [Logic Gates](#logic-gates)
+	+ [Nand](#nand), [Invert](#invert), [And](#and), [Or](#or), [Xor](#xor)
 
-# And
-![Screenshot](003_And.png)
+# Logic Gates
+## Nand
+`!(x & y)`
+![Nand](01_Logic_Gates/001_Nand.png)
 
-# Or
-![Screenshot](004_Or.png)
+## Invert
+`!x`
+![Invert](01_Logic_Gates/002_Invert.png)
 
-# Xor
-![Screenshot](005_Xor.png)
+## And
+`x & y`
+![And](01_Logic_Gates/003_And.png)
 
-# Half Adder
-![Screenshot](006_Half-Adder.png)
+## Or
+`x | y`
+![Or](01_Logic_Gates/004_Or.png)
 
-# Full Adder
-![Screenshot](007_Full-Adder.png)
+## Xor
+`x ^ y`
+![Xor](01_Logic_Gates/005_Xor.png)
 
-# Multi-bit Adder
-![Screenshot](008_Multi-bit-Adder.png)
+# Arithmetics
+## Half Adder
+![Half Adder](02_Arithmetics/006_Half-Adder.png)
 
-# Increment
-![Screenshot](009_Increment.png)
+## Full Adder
+![Full Adder](02_Arithmetics/007_Full-Adder.png)
 
-# Subtraction
-![Screenshot](010_Subtraction.png)
+## Multi-bit Adder
+![Multi-bit Adder](02_Arithmetics/008_Multi-bit-Adder.png)
 
-# Equal to Zero
-![Screenshot](011_Equal-to-Zero.png)
+## Increment
+![Increment](02_Arithmetics/009_Increment.png)
 
-# Less than Zero
-![Screenshot](012_Less-than-Zero.png)
+## Subtraction
+![Subtraction](02_Arithmetics/010_Subtraction.png)
 
-# Selector
-![Screenshot](013_Selector.png)
+## Equal to Zero
+![Equal to Zero](02_Arithmetics/011_Equal-to-Zero.png)
 
-# Switch
-![Screenshot](014_Switch.png)
+## Less than Zero
+![Less than Zero](02_Arithmetics/012_Less-than-Zero.png)
 
-# Latch
-![Screenshot](015_Latch.png)
+# Plumbing
+## Selector
+![Selector](03_Plumbing/013_Selector.png)
 
-# Data Flip-Flop
-![Screenshot](016_Data-Flip-Flop.png)
+## Switch
+![Switch](03_Plumbing/014_Switch.png)
 
-# Register
-![Screenshot](017_Register.png)
-![Screenshot](017_Register_min_nands.png)
+# Memory
+## Latch
+![Latch](04_Memory/015_Latch.png)
 
-# Counter
-![Screenshot](018_Counter.png)
+## Data Flip-Flop
+![Data Flip-Flop](04_Memory/016_Data-Flip-Flop.png)
 
-# RAM
-![Screenshot](019_RAM.png)
+## Register
+![Register (minimal nand gates)](04_Memory/017_Register_min_nands.png)
+![Register](04_Memory/017_Register.png)
 
-# Unary ALU
-![Screenshot](020_Unary-ALU.png)
+## Counter
+![Counter](04_Memory/018_Counter.png)
 
-# ALU
-![Screenshot](021_ALU.png)
-![Screenshot](021_ALU_min_nands.png)
+## RAM
+![RAM](04_Memory/019_RAM.png)
 
-# Opcodes
-![Screenshot](022_Opcodes.png)
+# Arithmetic Logic Unit
+## Unary ALU
+![Unary ALU](05_Arithmetic_Logic_Unit/020_Unary-ALU.png)
 
-# Condition
-![Screenshot](023_Condition.png)
+## ALU
+![ALU (minimal nand gates](05_Arithmetic_Logic_Unit/021_ALU_min_nands.png)
+![ALU](05_Arithmetic_Logic_Unit/021_ALU.png)
 
-# Combined Memory
-![Screenshot](024_Combined-Memory.png)
+## Opcodes
+![Opcodes](05_Arithmetic_Logic_Unit/022_Opcodes.png)
 
-# Instruction Decoder
-![Screenshot](025_Instruction-Decoder.png)
+## Condition
+![Conditon](05_Arithmetic_Logic_Unit/023_Condition.png)
 
-# Control Unit
-![Screenshot](026_Control-Unit.png)
+# Processor
+## Combined Memory
+![Combined Memory](06_Processor/024_Combined-Memory.png)
 
-# Computer
-![Screenshot](027_Computer.png)
+## Instruction Decoder
+![Instruction Decoder](06_Processor/025_Instruction-Decoder.png)
 
-# Input and Output
-![Screenshot](028_Input-and-Output.png)
+## Control Unit
+![Control Unit](06_Processor/026_Control-Unit.png)
 
-# Machine code
-![Screenshot](029_Machine-code.png)
+## Computer
+![Computer](06_Processor/027_Computer.png)
 
-# Assembler
+## Input and Output
+![Input and Output](06_Processor/028_Input-and-Output.png)
+
+# Programming
+## Machine code
+![Machine code](07_Programming/029_Machine-code.png)
+
+## Assembler
 ```asm
 # Assembler code 
 loop:
@@ -97,9 +114,9 @@ A = 0x7FFF
 A = loop
 JMP
 ```
-![Screenshot](030_Assembler.png)
+![Assembler](07_Programming/030_Assembler.png)
 
-# Escape Labyrinth
+## Escape Labyrinth
 ```asm
 begin:
 A = 0x7FFF
@@ -129,6 +146,6 @@ A = 0x7FFF
 A = begin
 JMP
 ```
-![Screenshot](031_Escape-Labyrinth.png)
+![Escape Labyrinth](07_Programming/031_Escape-Labyrinth.png)
 
 
