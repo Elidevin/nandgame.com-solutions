@@ -84,5 +84,19 @@
 # Input and Output
 ![Screenshot](028_Input-and-Output.png)
 
+# Machine code
+![Screenshot](029_Machine-code.png)
+
+# Assembler
+```asm
+# Assembler code 
+loop:
+A = 0x7FFF
+*A = *A+1
+*A = *A+1
+A = loop
+JMP
+```
+![Screenshot](30_Assembler.png)
 
 
