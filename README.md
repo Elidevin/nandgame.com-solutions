@@ -99,4 +99,36 @@ JMP
 ```
 ![Screenshot](030_Assembler.png)
 
+# Escape Labyrinth
+```asm
+begin:
+A = 0x7FFF
+D = *A
+A = 255
+D = D - A
+A = begin
+D - 1; JGT
+A = 0x7FFF
+D = *A
+A = 255
+D = D - A
+A = tl
+D - 1; JEQ
+fw:
+A = 4
+D = A
+A = 0x7FFF
+*A = D + *A
+A = begin
+JMP
+tl:
+A = 8
+D = A
+A = 0x7FFF
+*A = D + *A
+A = begin
+JMP
+```
+![Screenshot](031_Escape-Labyrinth.png)
+
 
