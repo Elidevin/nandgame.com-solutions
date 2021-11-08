@@ -1,27 +1,53 @@
 # Best solutions for [nandgame.com](http://nandgame.com/)
 
 * [Logic Gates](#logic-gates)
-	+ [Nand](#nand), [Invert](#invert), [And](#and), [Or](#or), [Xor](#xor)
+	+ [Nand](#nand), [Invert](#invert), [And](#and), [Or](#or) and [Xor](#xor)
+* [Arithmetics](#arithmetics)
+	+ [Half Adder](#half-adder), [Full Adder](#full-adder) and [Multi-bit Adder](#multi-bit-adder)
+	+ [Increment](#increment) and [Subtraction](#subtraction)
+	+ [Equal to Zero](#equal-to-zero) and [Less than Zero](#less-than-zero)
+* [Plumbing](#plumbing)
+	+ [Selector](#selector) and [Switch](#switch)
+* [Memory](#memory)
+	+ [Latch](#latch), [Data Flip-Flop](#data-flip-flop), [Register](#register), [Counter](#counter) and [RAM](#ram)
+* [Arithmetic Logic Unit](#arithmetic-logic-unit)
+	+ [Unary ALU](#unary-alu) and [ALU](#alu)
+	+ [Opcodes](#opcodes)
+	+ [Condition](#condition)
+* [Processor](#processor)
+	+ [Combined Memory](#combined-memory)
+	+ [Instruction Decoder](#instruction-decoder)
+	+ [Control Unit](#control-unit)
+	+ [Computer](#computer)
+	+ [Input and Output](#input-and-output)
+* [Programming](#programming)
+	+ [Machine code](#machine-code), [Assembler](#assembler) and [Escape Labyrinth](#escape-labyrinth)
+
 
 # Logic Gates
 ## Nand
 `!(x & y)`
+
 ![Nand](01_Logic_Gates/001_Nand.png)
 
 ## Invert
 `!x`
+
 ![Invert](01_Logic_Gates/002_Invert.png)
 
 ## And
 `x & y`
+
 ![And](01_Logic_Gates/003_And.png)
 
 ## Or
 `x | y`
+
 ![Or](01_Logic_Gates/004_Or.png)
 
 ## Xor
 `x ^ y`
+
 ![Xor](01_Logic_Gates/005_Xor.png)
 
 # Arithmetics
@@ -79,6 +105,27 @@
 ![ALU](05_Arithmetic_Logic_Unit/021_ALU.png)
 
 ## Opcodes
+| Opcode | zx | nx | zy | ny | f | no |
+| ------ | -- | -- | -- | -- | - | -- |
+| X      | 0  | 0  | 1  | 0  | 1 | 0  |
+| Y      | 1  | 0  | 0  | 0  | 1 | 0  |
+| X & Y  | 0  | 0  | 0  | 0  | 0 | 0  |
+| X | Y  | 0  | 1  | 0  | 1  | 0 | 1  |
+| ~X     | 0  | 1  | 1  | 0  | 1 | 0  |
+| ~Y     | 1  | 0  | 0  | 1  | 1 | 0  |
+| X + Y  | 0  | 0  | 0  | 0  | 1 | 0  |
+| X - Y  | 0  | 1  | 0  | 0  | 1 | 1  |
+| Y - X  | 0  | 0  | 0  | 1  | 1 | 1  |
+| 0      | 1  | 0  | 1  | 0  | 0 | 0  |
+| -1     | 1  | 1  | 1  | 0  | 1 | 0  |
+| 1      | 1  | 1  | 1  | 1  | 1 | 1  |
+| -X     | 0  | 0  | 1  | 1  | 1 | 1  |
+| -Y     | 1  | 1  | 0  | 0  | 1 | 1  |
+| X + 1  | 0  | 1  | 1  | 1  | 1 | 1  |
+| Y + 1  | 1  | 1  | 0  | 1  | 1 | 1  |
+| X - 1  | 0  | 0  | 1  | 1  | 1 | 0  |
+| Y - 1  | 1  | 1  | 0  | 0  | 1 | 0  |
+
 ![Opcodes](05_Arithmetic_Logic_Unit/022_Opcodes.png)
 
 ## Condition
@@ -102,6 +149,13 @@
 
 # Programming
 ## Machine code
+|ci| | |sm|zx|nx|zy|ny|f|no|a|d|\*a|lt|eq|gt|
+|--|-|-|--|--|--|--|--|-|--|-|-|---|--|--|--|
+|1|0|0|0|1|0|1|0|1|0|0|1|0|0|0|0|
+|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|
+|1|0|0|0|0|1|1|1|1|1|0|1|0|0|0|0|
+|1|0|0|0|0|0|0|0|0|0|0|0|0|1|1|1|
+
 ![Machine code](07_Programming/029_Machine-code.png)
 
 ## Assembler
