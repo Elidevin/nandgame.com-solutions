@@ -69,4 +69,10 @@
 # Condition
 ![Screenshot](023_Condition.png)
 
+# Combined Memory
+![Screenshot](024_Combined-Memory.png)
+
+# Instruction Decoder
+![Screenshot](025_Instuction-Decoder.png)
+
 
