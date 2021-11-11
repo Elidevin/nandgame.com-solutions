@@ -35,32 +35,55 @@
 	+ [Computer](#computer) (1769 + 79104  nand gates)
 	+ [Input and Output](#input-and-output) (66 nand gates)
 * [Programming](#programming)
-	+ [Machine code](#machine-code), [Assembler](#assembler), [Escape Labyrinth](#escape-labyrinth)
+	+ [Machine code](#machine-code)
+	+ [Assembler](#assembler)
+	+ [Escape Labyrinth](#escape-labyrinth)
+* [Transistor level](#transistor-level)
+	+ [Nand (CMOS)](#nand-cmos) `preview`
+* [Logic](#logic)
+	+ [Nor](#nor) (4 nand gates)
+	+ [Xnor](#xnor) (5 nand gates)
+	+ [Left Shift](#left-shift)
+	+ [Barrel Shift Left](#barrel-shift-left) `preview` (194 nand gates)
+* [Arithmetics](#arithmetics)
+	+ [Max](#max)
+	+ [Multiplication](#multiplication)
+* [Floating point](#floating-point)
+	+ Unpack float `preview`
+	+ Floating-point multiplication `preview`
+	+ Normalize overflow `preview`
+	+ Verify exponent `preview`
+	+ Align significands `preview`
+	+ Add signed magnitude `preview`
+	+ Normalize underflow `preview`
+	+ Pack float `preview`
+	+ Floating point multiplication `preview`
+	+ Floating-point addition `preview`
 
 
 # Logic Gates
 ## Nand
-`!(x & y)`
+`!(x & y)` `not(x and y)`
 
 ![Nand](01_Logic_Gates/001_Nand.png)
 
 ## Invert
-`!x`
+`!x` `not x`
 
 ![Invert](01_Logic_Gates/002_Invert.png)
 
 ## And
-`x & y`
+`x & y` `x and y`
 
 ![And](01_Logic_Gates/003_And.png)
 
 ## Or
-`x | y`
+`x | y` `x or y`
 
 ![Or](01_Logic_Gates/004_Or.png)
 
 ## Xor
-`x ^ y`
+`x ^ y` `x xor y`
 
 ![Xor](01_Logic_Gates/005_Xor.png)
 
@@ -98,6 +121,7 @@
 ![Latch](04_Memory/015_Latch.png)
 
 ## Data Flip-Flop
+![Data Flip-Flop](04_Memory/016_Data-Flip-Flop_min_nands.png)
 ![Data Flip-Flop](04_Memory/016_Data-Flip-Flop.png)
 
 ## Register
@@ -215,5 +239,51 @@ A = begin
 JMP
 ```
 ![Escape Labyrinth](07_Programming/031_Escape-Labyrinth.png)
+
+# Transistor level
+
+## Nand (CMOS) `preview`
+![Nand CMOS](08_Transistor_level/01_Nand_CMOS.png)
+
+# Logic
+
+## Nor
+![Nor](09_Logic/01_Nor.png)
+
+## Xnor
+![Xnor](09_Logic/02_Xnor.png)
+
+## Left Shift
+![Left Shift](09_Logic/03_Left_Shift.png)
+
+## Barrel Shift Left `preview`
+
+# Arithmetics
+
+## Max
+
+## Multiplication
+
+# Floating point
+
+## Unpack float `preview`
+
+## Floating-point multiplication `preview`
+
+## Normalize overflow `preview`
+
+## Verify exponent `preview`
+
+## Align significands `preview`
+
+## Add signed magnitude `preview`
+
+## Normalize underflow `preview`
+
+## Pack float `preview`
+
+## Floating-point multiplication `preview`
+
+## Floating-point additon `preview`
 
 
