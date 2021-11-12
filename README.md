@@ -53,8 +53,8 @@
 	+ [Floating-point multiplication](#floating-point-multiplication) `preview` (661 nand gates)
 	+ [Normalize overflow](#normalize-overflow) `preview` (517 nand gates)
 	+ [Verify exponent](#verify-exponent) `preview` (111 nand gates)
-	+ Align significands `preview`
-	+ Add signed magnitude `preview`
+	+ [Align significands](#align-significands) `preview` (547 nand gates)
+	+ [Add signed magnitude](#add-signed-magnitude) `preview` (610 nand gates)
 	+ Normalize underflow `preview`
 	+ Pack float `preview`
 	+ Floating point multiplication `preview`
@@ -282,8 +282,10 @@ JMP
 ![Verify exponent](11_Floating_point/04_Verify_exponent.png)
 
 ## Align significands
+![Align significands](11_Floating_point/05_Align_significands.png)
 
 ## Add signed magnitude
+![Add signed magnitude](11_Floating_point/06_Add_signed_magnitude.png)
 
 ## Normalize underflow
 
