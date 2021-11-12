@@ -49,8 +49,8 @@
 	+ [Max](#max) (225 nand gates)
 	+ [Multiplication](#multiplication) (1520 nand gates)
 * [Floating point](#floating-point)
-	+ Unpack float `preview`
-	+ Floating-point multiplication `preview`
+	+ [Unpack float](#unpack-float) (47 nand gates) `preview`
+	+ [Floating-point multiplication](#floating-point-multiplication) (661 nand gates) `preview`
 	+ Normalize overflow `preview`
 	+ Verify exponent `preview`
 	+ Align significands `preview`
@@ -270,8 +270,10 @@ JMP
 # Floating point
 
 ## Unpack float
+![Unpack float](11_Floating_point/01_Unpack_float.png)
 
 ## Floating-point multiplication
+![Floating-point multiplication](11_Floating_point/02_Floating_point_multiplication.png)
 
 ## Normalize overflow
 
