@@ -46,8 +46,8 @@
 	+ [Left Shift](#left-shift)
 	+ [Barrel Shift Left](#barrel-shift-left) `preview` (194 nand gates)
 * [Arithmetics](#arithmetics)
-	+ [Max](#max)
-	+ [Multiplication](#multiplication)
+	+ [Max](#max) (225 nand gates)
+	+ [Multiplication](#multiplication) (1520 nand gates)
 * [Floating point](#floating-point)
 	+ Unpack float `preview`
 	+ Floating-point multiplication `preview`
@@ -242,7 +242,7 @@ JMP
 
 # Transistor level
 
-## Nand (CMOS) `preview`
+## Nand (CMOS)
 ![Nand CMOS](08_Transistor_level/01_Nand_CMOS.png)
 
 # Logic
@@ -256,34 +256,37 @@ JMP
 ## Left Shift
 ![Left Shift](09_Logic/03_Left_Shift.png)
 
-## Barrel Shift Left `preview`
+## Barrel Shift Left
+![Barrel Shift Left](09_Logic/04_Barrel_Shift_Left.png)
 
 # Arithmetics
 
 ## Max
+![Max](10_Arithmetics/01_Max.png)
 
 ## Multiplication
+![Multiplication](10_Arithmetics/02_Multiplication.png)
 
 # Floating point
 
-## Unpack float `preview`
+## Unpack float
 
-## Floating-point multiplication `preview`
+## Floating-point multiplication
 
-## Normalize overflow `preview`
+## Normalize overflow
 
-## Verify exponent `preview`
+## Verify exponent
 
-## Align significands `preview`
+## Align significands
 
-## Add signed magnitude `preview`
+## Add signed magnitude
 
-## Normalize underflow `preview`
+## Normalize underflow
 
-## Pack float `preview`
+## Pack float
 
-## Floating-point multiplication `preview`
+## Floating-point multiplication
 
-## Floating-point additon `preview`
+## Floating-point additon
 
 
