@@ -111,9 +111,11 @@
 
 # Plumbing
 ## Selector
+![1bit Selector](extra/1-bit_selector.png)
 ![Selector](03_Plumbing/013_Selector.png)
 
 ## Switch
+![1bit switch](extra/1-bit_switch.png)
 ![Switch](03_Plumbing/014_Switch.png)
 
 # Memory
