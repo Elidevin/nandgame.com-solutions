@@ -38,6 +38,16 @@
 	+ [Machine code](#machine-code)
 	+ [Assembler](#assembler)
 	+ [Escape Labyrinth](#escape-labyrinth)
+* [Stack machine](#stack-machine)
+	+ [Init stack](#init-stack)
+	+ [Push D](#push-d)
+	+ [Pop D](#pop-d), [Pop A](#pop-a)
+	+ [Push Value](#push-value)
+	+ [Add](#add), [Sub](#sub), [Neg](#neg)
+	+ [Tokenize](#tokenize)
+	+ [Grammar](#grammar)
+	+ [Code generation](#code-generation)
+
 * [Transistor level](#transistor-level)
 	+ [Nand (CMOS)](#nand-cmos) `preview`
 * [Logic](#logic)
@@ -241,6 +251,77 @@ A = begin
 JMP
 ```
 ![Escape Labyrinth](07_Programming/031_Escape-Labyrinth.png)
+
+# Stack machine
+
+## Init stack
+```asm
+A = 0x0100
+D = A
+A = SP
+*A = D
+```
+
+## Push D
+```asm
+A = SP
+A = *A
+*A = D
+A = SP
+*A = *A+1
+```
+
+## Pop D
+```asm
+A = SP
+*A = *A-1
+A = *A
+D = *A
+```
+
+## Pop A
+```asm
+A = SP
+*A = *A-1
+A = *A
+A = *A
+```
+
+## Push Value
+```asm
+A = value
+D = A
+PUSH_D
+```
+
+## Add
+```asm
+POP_D
+POP_A
+D = D + A
+PUSH_D
+```
+
+## Sub
+```asm
+POP_D
+POP_A
+D = A - D
+PUSH_D
+```
+
+## Neg
+```asm
+POP_A
+D = -A
+PUSH_D
+```
+
+## Tokenize
+
+## Grammar
+
+## Code generator
 
 # Transistor level
 
