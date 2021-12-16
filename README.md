@@ -1,7 +1,7 @@
 # Best solutions for [nandgame.com](http://nandgame.com/)
 
 * [Logic Gates](#logic-gates)
-	+ [Nand](#nand) (1 relay)
+	+ [Nand](#nand) (2 relays)
 	+ [Invert](#invert) (1 nand gate)
 	+ [And](#and) (2 nand gates)
 	+ [Or](#or) (3 nand gates)
@@ -47,7 +47,6 @@
 	+ [Tokenize](#tokenize)
 	+ [Grammar](#grammar)
 	+ [Code generation](#code-generation)
-
 * [Transistor level](#transistor-level)
 	+ [Nand (CMOS)](#nand-cmos) `preview`
 * [Logic](#logic)
@@ -318,10 +317,76 @@ PUSH_D
 ```
 
 ## Tokenize
+| Type    | Match  | Grammar | Name   |
+|:-------:|:------:|:-------:|:------:|
+| Pattern | [ ]+   | Ignore  |        |
+| Pattern | [0-9]+ | Name    | Number |
+| Exact   | +      | Literal |        |
+| Exact   | -      | Literal |        |
+| Exact   | (      | Literal |        |
+| Exact   | )      | Literal |        |
 
 ## Grammar
+| Symbol     | Expression          |
+|:----------:|:-------------------:|
+| PROGRAM    | Expression          |
+| Expression | Expression + Number |
+| Expression | Number              |
+| Expression | Expression - Number |
+| Expression | ( Expression )      |
+| Expression | Number - Expression |
+| Expression | Number + Expression |
+| Expression | - Expression        |
 
 ## Code generator
+`PROGRAM` `Expression`
+```asm
+
+```
+
+`Expression` `Expression + Number`
+```asm
+%Expression%
+PUSH_VALUE %Number%
+ADD
+```
+
+`Expression` `Number`
+```asm
+PUSH_VALUE %Number%
+```
+
+`Expression` `Expression - Number`
+```asm
+%Expression%
+PUSH_VALUE %Number%
+SUB
+```
+
+`Expression` `( Expression )`
+```asm
+%Expression%
+```
+
+`Expression` `Number - Expression`
+```asm
+PUSH_VALUE %Number%
+%Expression%
+SUB
+```
+
+`Expression` `Number + Expression`
+```asm
+PUSH_VALUE %Number%
+%Expression%
+ADD
+```
+
+`Expression` `- Expression`
+```asm
+%Expression%
+NEG
+```
 
 # Transistor level
 
