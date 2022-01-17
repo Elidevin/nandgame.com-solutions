@@ -72,35 +72,120 @@
 
 # Logic Gates
 ## Nand
-`!(x & y)` `not(x and y)`
+| x | y | out |
+|:-:|:-:|:---:|
+| 0 | 0 |  1  |
+| 0 | 1 |  1  |
+| 1 | 0 |  1  |
+| 1 | 1 |  0  |
+
+`(not(x) and not(y)) or (not(x) and y) or (x and not(y))`
+
+`(not(x) and (not(y) or y)) or (x and not(y))`
+
+`(not(x)) or (x and not(y))`
+
+`not(x and y)` -> `x nand y`
 
 ![Nand](01_Logic_Gates/001_Nand.png)
 
 ## Invert
-`!x` `not x`
+| x | out |
+|:-:|:---:|
+| 0 |  1  |
+| 1 |  0  |
+
+`not(x)` -> `x nand x`
 
 ![Invert](01_Logic_Gates/002_Invert.png)
 
 ## And
-`x & y` `x and y`
+| x | y | out |
+|:-:|:-:|:---:|
+| 0 | 0 |  0  |
+| 0 | 1 |  0  |
+| 1 | 0 |  0  |
+| 1 | 1 |  1  |
+
+`x and y` -> `not(x nand y)`
 
 ![And](01_Logic_Gates/003_And.png)
 
 ## Or
-`x | y` `x or y`
+| x | y | out |
+|:-:|:-:|:---:|
+| 0 | 0 |  0  |
+| 0 | 1 |  1  |
+| 1 | 0 |  1  |
+| 1 | 1 |  1  |
+
+`(not(x) and y) or (x and not(y)) or (x and y)`
+
+`(y and (not(x) or not(y))) or (x and y)`
+
+`(y and not(x and y)) or (x and y)`
+
+`x or y` -> `not(x) nand not(y)`
 
 ![Or](01_Logic_Gates/004_Or.png)
 
 ## Xor
-`x ^ y` `x xor y`
+| x | y | out |
+|:-:|:-:|:---:|
+| 0 | 0 |  0  |
+| 0 | 1 |  1  |
+| 1 | 0 |  1  |
+| 1 | 1 |  0  |
+
+```
+(not(x) and y) or (x and not(y))
+```
+
+```
+x xor y` -> `(not(x) nand y) nand (not(y) nand x)` -> `((x nand y) nand x) nand ((x nand y) nand y)
+```
 
 ![Xor](01_Logic_Gates/005_Xor.png)
 
 # Arithmetics
 ## Half Adder
+| a | b | h | l |
+|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
+
+```
+x and y = h
+```
+
+```
+(not(a) and b) or (a and not(b)) = l
+```
+
 ![Half Adder](02_Arithmetics/006_Half-Adder.png)
 
 ## Full Adder
+| a | b | c | h | l |
+|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 0 | 1 |
+| 0 | 1 | 0 | 0 | 1 |
+| 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 |
+| 1 | 0 | 1 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 1 |
+
+```
+(not(a) and b and c) or (a and not(b) and c) or (a and b and not(c)) or (a and b and c) = h
+```
+
+```
+(not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b and not(c)) or (a and not(b) and not(c)) or (a and b and c) = l
+```
+
 ![Full Adder](02_Arithmetics/007_Full-Adder.png)
 
 ## Multi-bit Adder
