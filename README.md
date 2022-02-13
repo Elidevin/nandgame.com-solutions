@@ -1,5 +1,6 @@
 # Best solutions for [nandgame.com](http://nandgame.com/)
 
+## Hardware
 * [Logic Gates](#logic-gates)
 	+ [Nand](#nand) (2 relays)
 	+ [Invert](#invert) (1 nand gate)
@@ -34,10 +35,12 @@
 	+ [Control Unit](#control-unit) (1162 + 79104 nand gates)
 	+ [Computer](#computer) (1492 + 79104  nand gates)
 	+ [Input and Output](#input-and-output) (66 nand gates)
+## Software
 * [Programming](#programming)
 	+ [Machine code](#machine-code)
 	+ [Assembler](#assembler)
 	+ [Escape Labyrinth](#escape-labyrinth)
+	+ [Display](#display)
 * [Stack machine](#stack-machine)
 	+ [Init stack](#init-stack)
 	+ [Push D](#push-d)
@@ -47,6 +50,14 @@
 	+ [Tokenize](#tokenize)
 	+ [Grammar](#grammar)
 	+ [Code generation](#code-generation)
+* [Conditionals](#conditionals)
+	+ [Eq](#eq)
+	+ [Gt](#gt)
+	+ [Lt](#lt)
+	+ [Not](#not)
+	+ [Goto](#goto)
+	+ [If-goto](#if-goto)
+## Optional Levels
 * [Transistor level](#transistor-level)
 	+ [Nand (CMOS)](#nand-cmos) `preview`
 * [Logic](#logic)
@@ -64,10 +75,10 @@
 	+ [Verify exponent](#verify-exponent) `preview` (111 nand gates)
 	+ [Align significands](#align-significands) `preview` (547 nand gates)
 	+ [Add signed magnitude](#add-signed-magnitude) `preview` (610 nand gates)
-	+ Normalize underflow `preview`
-	+ Pack float `preview`
-	+ Floating point multiplication `preview`
-	+ Floating-point addition `preview`
+	+ [Normalize underflow](#normalize-underflow) `preview`
+	+ [Pack float](#pack-float) `preview`
+	+ [Floating point multiplication](#floating-point-multiplication-1) `preview`
+	+ [Floating-point addition](#floating-point-addition) `preview`
 
 
 # Logic Gates
@@ -336,6 +347,8 @@ JMP
 ```
 ![Escape Labyrinth](07_Programming/031_Escape-Labyrinth.png)
 
+## Display
+
 # Stack machine
 
 ## Init stack
@@ -423,7 +436,7 @@ PUSH_D
 | Expression | Number + Expression |
 | Expression | - Expression        |
 
-## Code generator
+## Code generation
 `PROGRAM` `Expression`
 ```asm
 
@@ -472,6 +485,20 @@ ADD
 %Expression%
 NEG
 ```
+
+# Conditionals
+
+## Eq
+
+## Gt
+
+## Lt
+
+## Not
+
+## Goto
+
+## If-goto
 
 # Transistor level
 
@@ -526,6 +553,6 @@ NEG
 
 ## Floating-point multiplication
 
-## Floating-point additon
+## Floating-point addition
 
 
