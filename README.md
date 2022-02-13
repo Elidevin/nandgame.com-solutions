@@ -59,9 +59,10 @@
 	+ [If-goto](#if-goto)
 ## Optional Levels
 * [Transistor level](#transistor-level)
-	+ [Nand (CMOS)](#nand-cmos) `preview`
+	+ [Nand (CMOS)](#nand-cmos)
+	+ [Invert (CMOS)](#invert-cmos)
+	+ [Nor (CMOS)](#nor-cmos)
 * [Logic](#logic)
-	+ [Nor](#nor) (4 nand gates)
 	+ [Xnor](#xnor) (5 nand gates)
 	+ [Left Shift](#left-shift)
 	+ [Barrel Shift Left](#barrel-shift-left) `preview` (194 nand gates)
@@ -505,10 +506,11 @@ NEG
 ## Nand (CMOS)
 ![Nand CMOS](08_Transistor_level/01_Nand_CMOS.png)
 
-# Logic
+## Invert (CMOS)
 
-## Nor
-![Nor](09_Logic/01_Nor.png)
+## Nor (CMOS)
+
+# Logic
 
 ## Xnor
 ![Xnor](09_Logic/02_Xnor.png)
