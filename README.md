@@ -51,17 +51,17 @@
 	+ [Grammar](#grammar)
 	+ [Code generation](#code-generation)
 * [Conditionals](#conditionals)
-	+ [Eq](#eq)
-	+ [Gt](#gt)
-	+ [Lt](#lt)
-	+ [Not](#not)
-	+ [Goto](#goto)
-	+ [If-goto](#if-goto)
+	+ ~~[Eq](#eq)~~
+	+ ~~[Gt](#gt)~~
+	+ ~~[Lt](#lt)~~
+	+ ~~[Not](#not)~~
+	+ ~~[Goto](#goto)~~
+	+ ~~[If-goto](#if-goto)~~
 ## Optional Levels
 * [Transistor level](#transistor-level)
 	+ [Nand (CMOS)](#nand-cmos)
-	+ [Invert (CMOS)](#invert-cmos)
-	+ [Nor (CMOS)](#nor-cmos)
+	+ ~~[Invert (CMOS)](#invert-cmos)~~
+	+ ~~[Nor (CMOS)](#nor-cmos)~~
 * [Logic](#logic)
 	+ [Xnor](#xnor) (5 nand gates)
 	+ [Left Shift](#left-shift)
@@ -76,10 +76,10 @@
 	+ [Verify exponent](#verify-exponent) `preview` (111 nand gates)
 	+ [Align significands](#align-significands) `preview` (547 nand gates)
 	+ [Add signed magnitude](#add-signed-magnitude) `preview` (610 nand gates)
-	+ [Normalize underflow](#normalize-underflow) `preview`
-	+ [Pack float](#pack-float) `preview`
-	+ [Floating point multiplication](#floating-point-multiplication-1) `preview`
-	+ [Floating-point addition](#floating-point-addition) `preview`
+	+ ~~[Normalize underflow](#normalize-underflow) `preview`~~
+	+ ~~[Pack float](#pack-float) `preview`~~
+	+ ~~[Floating point multiplication](#floating-point-multiplication-1) `preview`~~
+	+ ~~[Floating-point addition](#floating-point-addition) `preview`~~
 
 
 # Logic Gates
@@ -349,6 +349,15 @@ JMP
 ![Escape Labyrinth](07_Programming/031_Escape-Labyrinth.png)
 
 ## Display
+```asm
+A = 0x4000
+D = A
+*A = D
+A = A + 1
+*A = D
+A = 0x4200
+*A = D
+```
 
 # Stack machine
 
