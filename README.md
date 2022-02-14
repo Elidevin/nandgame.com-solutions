@@ -362,6 +362,9 @@ A = 0x4200
 # Stack machine
 
 ## Init stack
+| Name | Number |
+| :--: |:------:|
+| SP   | 0      |
 ```asm
 A = 0x0100
 D = A
@@ -454,51 +457,57 @@ PUSH_D
 
 `Expression` `Expression + Number`
 ```asm
-%Expression%
-PUSH_VALUE %Number%
+[Expression]
+PUSH_VALUE [Number]
 ADD
 ```
 
 `Expression` `Number`
 ```asm
-PUSH_VALUE %Number%
+PUSH_VALUE [Number]
 ```
 
 `Expression` `Expression - Number`
 ```asm
-%Expression%
-PUSH_VALUE %Number%
+[Expression]
+PUSH_VALUE [Number]
 SUB
 ```
 
 `Expression` `( Expression )`
 ```asm
-%Expression%
+[Expression]
 ```
 
 `Expression` `Number - Expression`
 ```asm
-PUSH_VALUE %Number%
-%Expression%
+PUSH_VALUE [Number]
+[Expression]
 SUB
 ```
 
 `Expression` `Number + Expression`
 ```asm
-PUSH_VALUE %Number%
-%Expression%
+PUSH_VALUE [Number]
+[Expression]
 ADD
 ```
 
 `Expression` `- Expression`
 ```asm
-%Expression%
+[Expression]
 NEG
 ```
 
 # Conditionals
 
 ## Eq
+|Name|Number|
+|:==:|:====:|
+| SP |   0  |
+```asm
+
+```
 
 ## Gt
 
