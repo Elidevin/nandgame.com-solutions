@@ -36,7 +36,7 @@
 	+ [Computer](#computer) (1492 + 79104  nand gates)
 	+ [Input and Output](#input-and-output) (66 nand gates)
 ## Software
-* [Programming](#programming)
+* [Low level](#low-level)
 	+ [Machine code](#machine-code)
 	+ [Assembler](#assembler)
 	+ [Escape Labyrinth](#escape-labyrinth)
@@ -293,7 +293,7 @@ x and y = h
 ## Input and Output
 ![Input and Output](06_Processor/028_Input-and-Output.png)
 
-# Programming
+# Low level
 ## Machine code
 | ci |   |   | sm | zx | nx | zy | ny | f | no | a | d | \*a | lt | eq | gt |
 |:--:|:-:|:-:|:--:|:--:|:--:|:--:|:--:|:-:|:--:|:-:|:-:|:---:|:--:|:--:|:--:|
