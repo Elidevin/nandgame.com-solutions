@@ -628,7 +628,7 @@ NEG
 # Transistor level
 
 ## Nand (CMOS)
-![Nand CMOS](3_Optional_Levels/01_Transistor_level/01_Nand_CMOS.png)
+![Nand CMOS](3_Optional_Levels/01_Transistor_level/1_Nand_CMOS.png)
 
 ## Invert (CMOS)
 
@@ -654,10 +654,10 @@ NEG
 # Arithmetics
 
 ## Max
-![Max](3_Optional_Levels/03_Arithmetics/01_Max.png)
+![Max](3_Optional_Levels/03_Arithmetics/1_Max.png)
 
 ## Multiplication
-![Multiplication](3_Optional_Levels/03_Arithmetics/02_Multiplication.png)
+![Multiplication](3_Optional_Levels/03_Arithmetics/2_Multiplication.png)
 
 # Floating point
 
