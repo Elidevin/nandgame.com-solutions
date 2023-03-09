@@ -168,7 +168,7 @@
 | 1 | 1 |  1  |
 </details>
 
-![Nand](01_Logic_Gates/1_Nand.png)
+![Nand](1_Hardware/01_Logic_Gates/1_Nand.png)
 
 ## Invert
 | x | out |
@@ -183,7 +183,7 @@ not(x)
 x nand x
 ```
 
-![Invert](01_Logic_Gates/2_Invert.png)
+![Invert](1_Hardware/01_Logic_Gates/2_Invert.png)
 
 ## And
 | x | y | out |          |
@@ -200,7 +200,7 @@ x and y
 (x nand y) nand (x nand y)
 ```
 
-![And](01_Logic_Gates/3_And.png)
+![And](1_Hardware/01_Logic_Gates/3_And.png)
 
 ## Or
 | x | y | out |          |
@@ -217,7 +217,7 @@ x and y
 (x nand x) nand (y nand y)
 ```
 
-![Or](01_Logic_Gates/4_Or.png)
+![Or](1_Hardware/01_Logic_Gates/4_Or.png)
 
 ## Xor
 | x | y | out |          |
@@ -234,7 +234,7 @@ x and y
 ((x nand y) nand x) nand ((x nand y) nand y)
 ```
 
-![Xor](01_Logic_Gates/5_Xor.png)
+![Xor](1_Hardware/01_Logic_Gates/5_Xor.png)
 
 # Arithmetics
 ## Half Adder
@@ -252,7 +252,7 @@ h = a and b
 l = a xor b
 ```
 
-![Half Adder](02_Arithmetics/1_Half-Adder.png)
+![Half Adder](1_Hardware/02_Arithmetics/1_Half-Adder.png)
 
 ## Full Adder
 | a | b | c | h | l |               |               |
@@ -273,78 +273,81 @@ h = (not(a) and b and c) or (a and not(b) and c) or (a and b and not(c)) or (a a
 l = (not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b and not(c)) or (a and not(b) and not(c)) or (a and b and c)
 ```
 
-![Full Adder](02_Arithmetics/2_Full-Adder.png)
+![Full Adder](1_Hardware/02_Arithmetics/2_Full-Adder.png)
 
 ## Multi-bit Adder
-![Multi-bit Adder](02_Arithmetics/3_Multi-bit-Adder.png)
+![Multi-bit Adder](1_Hardware/02_Arithmetics/3_Multi-bit-Adder.png)
 
 ## Increment
-![Increment](02_Arithmetics/4_Increment.png)
+![Increment](1_Hardware/02_Arithmetics/4_Increment.png)
 
 ## Subtraction
-![Subtraction](02_Arithmetics/5_Subtraction.png)
+![Subtraction](1_Hardware/02_Arithmetics/5_Subtraction.png)
 
 ## Equal to Zero
-![Equal to Zero](02_Arithmetics/6_Equal-to-Zero.png)
+![Equal to Zero](1_Hardware/02_Arithmetics/6_Equal-to-Zero.png)
 
 ## Less than Zero
-![Less than Zero](02_Arithmetics/7_Less-than-Zero.png)
+![Less than Zero](1_Hardware/02_Arithmetics/7_Less-than-Zero.png)
 
 # Switching
 ## Selector
-![Selector](03_Switching/1_Selector.png)
+![Selector](1_Hardware/03_Switching/1_Selector.png)
 
 ## Switch
-![Switch](03_Switching/2_Switch.png)
+![Switch](1_Hardware/03_Switching/2_Switch.png)
 
 # Arithmetic Logic Unit
 
 ## Logic Unit
-![Logic Unit](04_Arithmetic_Logic_Unit/1_Logic_Unit.png)
+![Logic Unit](1_Hardware/04_Arithmetic_Logic_Unit/1_Logic_Unit.png)
 
 ## Arithmetic Unit
-![Arithmetic Unit](04_Arithmetic_Logic_Unit/2_Arithmetic_Unit.png)
+![Arithmetic Unit](1_Hardware/04_Arithmetic_Logic_Unit/2_Arithmetic_Unit.png)
 
 ## ALU
-![ALU](04_Arithmetic_Logic_Unit/4_ALU.png)
+![ALU](1_Hardware/04_Arithmetic_Logic_Unit/4_ALU.png)
 
 ## Condition
-![Condition](04_Arithmetic_Logic_Unit/5_Condition.png)
+![Condition](1_Hardware/04_Arithmetic_Logic_Unit/5_Condition.png)
 
 # Memory
 ## Latch
-![Latch](04_Memory/1_Latch.png)
+![Latch](1_Hardware/05_Memory/1_Latch.png)
 
 ## Data Flip-Flop
-![Data Flip-Flop](04_Memory/2_Data-Flip-Flop_min_nands.png)
-![Data Flip-Flop](04_Memory/2_Data-Flip-Flop.png)
+![Data Flip-Flop](1_Hardware/05_Memory/2_Data-Flip-Flop_min_nands.png)
+![Data Flip-Flop](1_Hardware/05_Memory/2_Data-Flip-Flop.png)
 
 ## Register
-![Register (minimal nand gates)](04_Memory/3_Register_min_nands.png)
-![Register](04_Memory/3_Register.png)
+![Register (minimal nand gates)](1_Hardware/05_Memory/3_Register_min_nands.png)
+![Register](1_Hardware/05_Memory/3_Register.png)
 
 ## Counter
-![Counter](04_Memory/4_Counter.png)
+![Counter](1_Hardware/05_Memory/4_Counter.png)
 
 ## RAM
-![RAM](04_Memory/5_RAM.png)
+![RAM](1_Hardware/05_Memory/5_RAM.png)
 
 # Processor
 
 ## Combined Memory
-![Combined Memory](06_Processor/1_Combined-Memory.png)
+![Combined Memory](1_Hardware/06_Processor/1_Combined-Memory.png)
 
 ## Instruction
-![Instruction](06_Processor/2_Instruction.png)
+![Instruction](1_Hardware/06_Processor/2_Instruction.png)
 
 ## Control Unit
-![Control Unit](06_Processor/3_Control-Unit.png)
+![Control Unit](1_Hardware/06_Processor/3_Control-Unit.png)
 
 ## Computer
-![Computer](06_Processor/4_Computer.png)
+![Computer](1_Hardware/06_Processor/4_Computer.png)
 
 ## Input and Output
-![Input and Output](06_Processor/5_Input-and-Output.png)
+![Input and Output](1_Hardware/06_Processor/5_Input-and-Output.png)
+
+
+
 
 # Low level
 
@@ -356,7 +359,7 @@ l = (not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b
 | 1  | 0 | 0 | 0  | 0  | 1  | 1  | 1  | 1 | 1  | 0 | 1 | 0   | 0  | 0  | 0  |
 | 1  | 0 | 0 | 0  | 0  | 0  | 0  | 0  | 0 | 0  | 0 | 0 | 0   | 1  | 1  | 1  |
 
-![Machine code](07_Programming/1_Machine-code.png)
+![Machine code](2_Software/01_Low_level/1_Machine-code.png)
 
 ## Assembler Language
 ```asm
@@ -368,13 +371,13 @@ A = 0x7FFF
 A = loop
 JMP
 ```
-![Assembler](07_Programming/2_Assembler-Language.png)
+![Assembler](2_Software/01_Low_level/2_Assembler-Language.png)
 
 ## Assembler program
 ```
 pass
 ```
-![Assembler](07_Programming/3_Assembler-program.png)
+![Assembler](2_Software/01_Low_level/3_Assembler-program.png)
 
 ## Escape Labyrinth
 ```asm
@@ -406,7 +409,7 @@ A = 0x7FFF
 A = begin
 JMP
 ```
-![Escape Labyrinth](07_Programming/4_Escape-Labyrinth.png)
+![Escape Labyrinth](2_Software/01_Low_level/4_Escape-Labyrinth.png)
 
 ## Display
 ```asm
@@ -621,10 +624,13 @@ NEG
 
 ## Pop local
 
+
+
+
 # Transistor level
 
 ## Nand (CMOS)
-![Nand CMOS](08_Transistor_level/01_Nand_CMOS.png)
+![Nand CMOS](3_Optional_Levels/01_Transistor_level/01_Nand_CMOS.png)
 
 ## Invert (CMOS)
 
@@ -633,47 +639,47 @@ NEG
 # Logic
 
 ## Xnor
-![Xnor](09_Logic/1_Xnor.png)
+![Xnor](3_Optional_Levels/02_Logic/1_Xnor.png)
 
 ## Left Shift
-![Left Shift](09_Logic/2_Left_Shift.png)
+![Left Shift](3_Optional_Levels/02_Logic/2_Left_Shift.png)
 
 ## Logical Right Shift
-![Logical Right Shift](09_Logic/3_Logical-Right-Shift.png)
+![Logical Right Shift](3_Optional_Levels/02_Logic/3_Logical-Right-Shift.png)
 
 ## Artithmetic Right Shift
-![Artithmetic Right Shift](09_Logic/4_Artithmetic-Right-Shift.png)
+![Artithmetic Right Shift](3_Optional_Levels/02_Logic/4_Artithmetic-Right-Shift.png)
 
 ## Barrel Shift Left
-![Barrel Shift Left](09_Logic/5_Barrel_Shift_Left.png)
+![Barrel Shift Left](3_Optional_Levels/02_Logic/5_Barrel_Shift_Left.png)
 
 # Arithmetics
 
 ## Max
-![Max](1_Arithmetics/01_Max.png)
+![Max](3_Optional_Levels/03_Arithmetics/01_Max.png)
 
 ## Multiplication
-![Multiplication](2_Arithmetics/02_Multiplication.png)
+![Multiplication](3_Optional_Levels/03_Arithmetics/02_Multiplication.png)
 
 # Floating point
 
 ## Unpack float
-![Unpack float](11_Floating_point/01_Unpack_float.png)
+![Unpack float](3_Optional_Levels/04_Floating_point/1_Unpack_float.png)
 
 ## Floating-point multiplication
-![Floating-point multiplication](11_Floating_point/02_Floating_point_multiplication.png)
+![Floating-point multiplication](3_Optional_Levels/04_Floating_point/2_Floating_point_multiplication.png)
 
 ## Normalize overflow
-![Normalize overflow](11_Floating_point/03_Normalize_overflow.png)
+![Normalize overflow](3_Optional_Levels/04_Floating_point/3_Normalize_overflow.png)
 
 ## Verify exponent
-![Verify exponent](11_Floating_point/04_Verify_exponent.png)
+![Verify exponent](3_Optional_Levels/04_Floating_point/4_Verify_exponent.png)
 
 ## Align significands
-![Align significands](11_Floating_point/05_Align_significands.png)
+![Align significands](3_Optional_Levels/04_Floating_point/5_Align_significands.png)
 
 ## Add signed magnitude
-![Add signed magnitude](11_Floating_point/06_Add_signed_magnitude.png)
+![Add signed magnitude](3_Optional_Levels/04_Floating_point/6_Add_signed_magnitude.png)
 
 ## Normalize underflow
 
