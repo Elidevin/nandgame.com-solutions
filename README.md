@@ -15,38 +15,46 @@
 	+ [Subtraction](#subtraction) (161 nand gates)
 	+ [Equal to Zero](#equal-to-zero) (10 nand gates)
 	+ [Less than Zero](#less-than-zero)
-* [Plumbing](#plumbing)
+* [Switching](#switching)
 	+ [Selector](#selector) (4 nand gates)
-	+ [Switch](#switch) (5 nand gates)
+	+ [Switch](#switch) (4 nand gates)
+* [Arithmetic Logic Unit](#arithmetic-logic-unit)
+	+ [Logic Unit](#logic-unit) (X nand gates)
+	+ [Arithmetic Unit](#arithmetic-unit) (X nand gates)
+	+ [ALU](#alu)
+	+ [Condition](#condition) (X nand gates)
 * [Memory](#memory)
 	+ [Latch](#latch) (4 nand gates)
 	+ [Data Flip-Flop](#data-flip-flop) (9 nand gates)
 	+ [Register](#register) (15 nand gates)
 	+ [Counter](#counter) (330 nand gates)
 	+ [RAM](#ram) (309 nand gates)
-* [Arithmetic Logic Unit](#arithmetic-logic-unit)
-	+ [Unary ALU](#unary-alu) (144 nand gates)
-	+ [ALU](#alu) (608 nand gates)
-	+ [Opcodes](#opcodes)
-	+ [Condition](#condition) (56 nand gates)
 * [Processor](#processor)
 	+ [Combined Memory](#combined-memory) (240 + 79104 nand gates)
-	+ [Instruction Decoder](#instruction-decoder) (130 nand gates)
+	+ [Instruction](#instruction) (X nand gates)
 	+ [Control Unit](#control-unit) (1162 + 79104 nand gates)
 	+ [Computer](#computer) (1492 + 79104  nand gates)
 	+ [Input and Output](#input-and-output) (66 nand gates)
 ## Software
 * [Low level](#low-level)
 	+ [Machine code](#machine-code)
-	+ [Assembler](#assembler)
+	+ [Assembler Language](#assembler-language)
+	+ [Assembler program](#assembler-program)
 	+ [Escape Labyrinth](#escape-labyrinth)
 	+ [Display](#display)
+	+ [Network](#network)
 * [Stack machine](#stack-machine)
 	+ [Init stack](#init-stack)
 	+ [Push D](#push-d)
-	+ [Pop D](#pop-d), [Pop A](#pop-a)
+	+ [Pop D](#pop-d)
+	+ [Pop A](#pop-a)
 	+ [Push Value](#push-value)
-	+ [Add](#add), [Sub](#sub), [Neg](#neg)
+	+ [Add](#add)
+	+ [Sub](#sub)
+	+ [Neg](#neg)
+	+ ~~[And](#and)~~
+	+ ~~[Or](#or)~~
+* [High-level language](#high-level-language)
 	+ [Tokenize](#tokenize)
 	+ [Grammar](#grammar)
 	+ [Code generation](#code-generation)
@@ -57,6 +65,19 @@
 	+ ~~[Not](#not)~~
 	+ ~~[Goto](#goto)~~
 	+ ~~[If-goto](#if-goto)~~
+* [Memory](#memory)
+	+ ~~[Push Memory](#push-memory)~~
+	+ ~~[Pop Memory](#pop-memory)~~
+	+ ~~[Push Static](#push-static)~~
+	+ ~~[Pop Static](#pop-static)~~
+* [Functions](#functions)
+	+ ~~[Call](#call)~~
+	+ ~~[Function](#function)~~
+	+ ~~[Return](#return)~~
+	+ ~~[Push argument](#push-argument)~~
+	+ ~~[Pop argument](#pop-argument)~~
+	+ ~~[Push local](#push-local)~~
+	+ ~~[Pop local](#pop-local)~~
 ## Optional Levels
 * [Transistor level](#transistor-level)
 	+ [Nand (CMOS)](#nand-cmos)
@@ -65,41 +86,89 @@
 * [Logic](#logic)
 	+ [Xnor](#xnor) (5 nand gates)
 	+ [Left Shift](#left-shift)
-	+ [Barrel Shift Left](#barrel-shift-left) `preview` (194 nand gates)
+	+ [Logical Right Shift](#logical-right-shift)
+	+ [Artithmetic Right Shift](#artithmetic-right-shift)
+	+ [Barrel Shift Left](#barrel-shift-left) (194 nand gates)
 * [Arithmetics](#arithmetics)
 	+ [Max](#max) (225 nand gates)
 	+ [Multiplication](#multiplication) (1520 nand gates)
 * [Floating point](#floating-point)
-	+ [Unpack float](#unpack-float) `preview` (47 nand gates)
-	+ [Floating-point multiplication](#floating-point-multiplication) `preview` (661 nand gates)
-	+ [Normalize overflow](#normalize-overflow) `preview` (517 nand gates)
-	+ [Verify exponent](#verify-exponent) `preview` (111 nand gates)
-	+ [Align significands](#align-significands) `preview` (547 nand gates)
-	+ [Add signed magnitude](#add-signed-magnitude) `preview` (610 nand gates)
-	+ ~~[Normalize underflow](#normalize-underflow) `preview`~~
-	+ ~~[Pack float](#pack-float) `preview`~~
-	+ ~~[Floating point multiplication](#floating-point-multiplication-1) `preview`~~
-	+ ~~[Floating-point addition](#floating-point-addition) `preview`~~
-
+	+ [Unpack floating-point value](#unpack-floating-point-value) (47 nand gates)
+	+ [Floating-point multiplication](#floating-point-multiplication) (661 nand gates)
+	+ [Normalize overflow](#normalize-overflow) (517 nand gates)
+	+ [Verify exponent](#verify-exponent) (111 nand gates)
+	+ [Align significands](#align-significands) (547 nand gates)
+	+ [Add signed magnitude](#add-signed-magnitude) (610 nand gates)
+	+ [Normalize underflow](#normalize-underflow)
+	+ [Pack floating-point value](#pack-floating-point-value)
+	+ [Floating-point multiplication](#floating-point-multiplication)
+	+ [Floating-point addition](#floating-point-addition)
+* [Multitasking](#multitasking) `preview`
+	+ [Timer Trigger](#timer-trigger) `preview`
+	+ [Mode controller](#mode-controller) `preview`
+	+ [Register with backup](#register-with-backup) `preview`
+	+ [Program Counter](#program-counter) `preview`
+	+ [Register bank](#register-bank) `preview`
+	+ [General-purpose Memory](#general-purpose-memory) `preview`
+	+ [Virtual Memory](#virtual-memory) `preview`
+	+ [Control Unit](#control-unit) `preview`
+	+ [Processor](#processor) `preview`
 
 # Logic Gates
 ## Nand
-| x | y | out |
+| x | y | out |          |
+|:-:|:-:|:---:|:--------:|
+| 0 | 0 |  1  | !x  & !y |
+| 0 | 1 |  1  | !x  &  y |
+| 1 | 0 |  1  |  x  & !y |
+| 1 | 1 |  0  |          |
+
+|          |                         |
+|:--------:|:-----------------------:|
+| !x  & !y | Peirce's arrow          |
+| !x  &  y | Converse nonimplication |
+|  x  & !y | Material nonimplication |
+|  x  &  y | Logical conjunction     |
+
+
+<details><summary> Peirce's arrow </summary>
+
+|!x |!y |  ↓  |
 |:-:|:-:|:---:|
-| 0 | 0 |  1  |
-| 0 | 1 |  1  |
-| 1 | 0 |  1  |
-| 1 | 1 |  0  |
+| 1 | 1 |  1  |
+| 1 | 0 |  0  |
+| 0 | 1 |  0  |
+| 0 | 0 |  0  |
+</details>
+<details><summary> Converse nonimplication </summary>
 
-`(not(x) and not(y)) or (not(x) and y) or (x and not(y))`
+|!x | y |  <  |
+|:-:|:-:|:---:|
+| 1 | 0 |  0  |
+| 1 | 1 |  1  |
+| 0 | 0 |  0  |
+| 0 | 1 |  0  |
+</details>
+<details><summary> Material nonimplication </summary>
 
-`(not(x) and (not(y) or y)) or (x and not(y))`
+| x |!y |  >  |
+|:-:|:-:|:---:|
+| 0 | 1 |  0  |
+| 0 | 0 |  0  |
+| 1 | 1 |  1  |
+| 1 | 0 |  0  |
+</details>
+<details><summary> Logical conjunction </summary>
 
-`(not(x)) or (x and not(y))`
+| x | y |  &  |
+|:-:|:-:|:---:|
+| 0 | 0 |  0  |
+| 0 | 1 |  0  |
+| 1 | 0 |  0  |
+| 1 | 1 |  1  |
+</details>
 
-`not(x and y)` -> `x nand y`
-
-![Nand](01_Logic_Gates/001_Nand.png)
+![Nand](01_Logic_Gates/1_Nand.png)
 
 ## Invert
 | x | out |
@@ -107,57 +176,65 @@
 | 0 |  1  |
 | 1 |  0  |
 
-`not(x)` -> `x nand x`
+```
+not(x)
+```
+```
+x nand x
+```
 
-![Invert](01_Logic_Gates/002_Invert.png)
+![Invert](01_Logic_Gates/2_Invert.png)
 
 ## And
-| x | y | out |
-|:-:|:-:|:---:|
-| 0 | 0 |  0  |
-| 0 | 1 |  0  |
-| 1 | 0 |  0  |
-| 1 | 1 |  1  |
+| x | y | out |          |
+|:-:|:-:|:---:|:--------:|
+| 0 | 0 |  0  |          |
+| 0 | 1 |  0  |          |
+| 1 | 0 |  0  |          |
+| 1 | 1 |  1  |  x & y   |
 
-`x and y` -> `not(x nand y)`
+```
+x and y
+``` 
+```
+(x nand y) nand (x nand y)
+```
 
-![And](01_Logic_Gates/003_And.png)
+![And](01_Logic_Gates/3_And.png)
 
 ## Or
-| x | y | out |
-|:-:|:-:|:---:|
-| 0 | 0 |  0  |
-| 0 | 1 |  1  |
-| 1 | 0 |  1  |
-| 1 | 1 |  1  |
+| x | y | out |          |
+|:-:|:-:|:---:|:--------:|
+| 0 | 0 |  0  |          |
+| 0 | 1 |  1  | !x &  y  |
+| 1 | 0 |  1  |  x & !y  |
+| 1 | 1 |  1  |  x &  y  |
 
-`(not(x) and y) or (x and not(y)) or (x and y)`
+```
+(not(x) and y) or (x and not(y)) or (x and y)
+```
+```
+(x nand x) nand (y nand y)
+```
 
-`(y and (not(x) or not(y))) or (x and y)`
-
-`(y and not(x and y)) or (x and y)`
-
-`x or y` -> `not(x) nand not(y)`
-
-![Or](01_Logic_Gates/004_Or.png)
+![Or](01_Logic_Gates/4_Or.png)
 
 ## Xor
-| x | y | out |
-|:-:|:-:|:---:|
-| 0 | 0 |  0  |
-| 0 | 1 |  1  |
-| 1 | 0 |  1  |
-| 1 | 1 |  0  |
+| x | y | out |          |
+|:-:|:-:|:---:|:--------:|
+| 0 | 0 |  0  |          |
+| 0 | 1 |  1  | !x &  y  |
+| 1 | 0 |  1  |  x & !y  |
+| 1 | 1 |  0  |          |
 
 ```
 (not(x) and y) or (x and not(y))
 ```
-
 ```
-x xor y` -> `(not(x) nand y) nand (not(y) nand x)` -> `((x nand y) nand x) nand ((x nand y) nand y)
+((x nand y) nand x) nand ((x nand y) nand y)
 ```
 
-![Xor](01_Logic_Gates/005_Xor.png)
+![Xor](01_Logic_Gates/5_Xor.png)
 
 # Arithmetics
 ## Half Adder
@@ -169,131 +246,108 @@ x xor y` -> `(not(x) nand y) nand (not(y) nand x)` -> `((x nand y) nand x) nand 
 | 1 | 1 | 1 | 0 |
 
 ```
-x and y = h
+h = a and b
+```
+```
+l = a xor b
 ```
 
-```
-(not(a) and b) or (a and not(b)) = l
-```
-
-![Half Adder](02_Arithmetics/006_Half-Adder.png)
+![Half Adder](02_Arithmetics/1_Half-Adder.png)
 
 ## Full Adder
-| a | b | c | h | l |
-|:-:|:-:|:-:|:-:|:-:|
-| 0 | 0 | 0 | 0 | 1 |
-| 0 | 0 | 1 | 0 | 1 |
-| 0 | 1 | 0 | 0 | 1 |
-| 0 | 1 | 1 | 1 | 0 |
-| 1 | 0 | 0 | 0 | 1 |
-| 1 | 0 | 1 | 1 | 0 |
-| 1 | 1 | 0 | 1 | 0 |
-| 1 | 1 | 1 | 1 | 1 |
+| a | b | c | h | l |               |               |
+|:-:|:-:|:-:|:-:|:-:|:-------------:|:-------------:|
+| 0 | 0 | 0 | 0 | 1 |               | !a & !b & !c  |
+| 0 | 0 | 1 | 0 | 1 |               | !a & !b &  c  |
+| 0 | 1 | 0 | 0 | 1 |               | !a &  b & !c  |
+| 0 | 1 | 1 | 1 | 0 | !a &  b &  c  |               |
+| 1 | 0 | 0 | 0 | 1 |               |  a & !b & !c  |
+| 1 | 0 | 1 | 1 | 0 |  a & !b &  c  |               |
+| 1 | 1 | 0 | 1 | 0 |  a &  b & !c  |               |
+| 1 | 1 | 1 | 1 | 1 |  a &  b &  c  |  a &  b &  c  |
 
 ```
-(not(a) and b and c) or (a and not(b) and c) or (a and b and not(c)) or (a and b and c) = h
+h = (not(a) and b and c) or (a and not(b) and c) or (a and b and not(c)) or (a and b and c)
+```
+```
+l = (not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b and not(c)) or (a and not(b) and not(c)) or (a and b and c)
 ```
 
-```
-(not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b and not(c)) or (a and not(b) and not(c)) or (a and b and c) = l
-```
-
-![Full Adder](02_Arithmetics/007_Full-Adder.png)
+![Full Adder](02_Arithmetics/2_Full-Adder.png)
 
 ## Multi-bit Adder
-![Multi-bit Adder](02_Arithmetics/008_Multi-bit-Adder.png)
+![Multi-bit Adder](02_Arithmetics/3_Multi-bit-Adder.png)
 
 ## Increment
-![Increment](02_Arithmetics/009_Increment.png)
+![Increment](02_Arithmetics/4_Increment.png)
 
 ## Subtraction
-![Subtraction](02_Arithmetics/010_Subtraction.png)
+![Subtraction](02_Arithmetics/5_Subtraction.png)
 
 ## Equal to Zero
-![Equal to Zero](02_Arithmetics/011_Equal-to-Zero.png)
+![Equal to Zero](02_Arithmetics/6_Equal-to-Zero.png)
 
 ## Less than Zero
-![Less than Zero](02_Arithmetics/012_Less-than-Zero.png)
+![Less than Zero](02_Arithmetics/7_Less-than-Zero.png)
 
-# Plumbing
+# Switching
 ## Selector
-![1bit Selector](extra/1-bit_selector.png)
-![Selector](03_Plumbing/013_Selector.png)
+![Selector](03_Switching/1_Selector.png)
 
 ## Switch
-![1bit switch](extra/1-bit_switch.png)
-![Switch](03_Plumbing/014_Switch.png)
+![Switch](03_Switching/2_Switch.png)
+
+# Arithmetic Logic Unit
+
+## Logic Unit
+![Logic Unit](04_Arithmetic_Logic_Unit/1_Logic_Unit.png)
+
+## Arithmetic Unit
+![Arithmetic Unit](04_Arithmetic_Logic_Unit/2_Arithmetic_Unit.png)
+
+## ALU
+![ALU](04_Arithmetic_Logic_Unit/4_ALU.png)
+
+## Condition
+![Condition](04_Arithmetic_Logic_Unit/5_Condition.png)
 
 # Memory
 ## Latch
-![Latch](04_Memory/015_Latch.png)
+![Latch](04_Memory/1_Latch.png)
 
 ## Data Flip-Flop
-![Data Flip-Flop](04_Memory/016_Data-Flip-Flop_min_nands.png)
-![Data Flip-Flop](04_Memory/016_Data-Flip-Flop.png)
+![Data Flip-Flop](04_Memory/2_Data-Flip-Flop_min_nands.png)
+![Data Flip-Flop](04_Memory/2_Data-Flip-Flop.png)
 
 ## Register
-![Register (minimal nand gates)](04_Memory/017_Register_min_nands.png)
-![Register](04_Memory/017_Register.png)
+![Register (minimal nand gates)](04_Memory/3_Register_min_nands.png)
+![Register](04_Memory/3_Register.png)
 
 ## Counter
-![Counter](04_Memory/018_Counter.png)
+![Counter](04_Memory/4_Counter.png)
 
 ## RAM
-![RAM](04_Memory/019_RAM.png)
-
-# Arithmetic Logic Unit
-## Unary ALU
-![Unary ALU](05_Arithmetic_Logic_Unit/020_Unary-ALU.png)
-
-## ALU
-![ALU (minimal nand gates](05_Arithmetic_Logic_Unit/021_ALU_min_nands.png)
-![ALU](05_Arithmetic_Logic_Unit/021_ALU.png)
-
-## Opcodes
-| Opcode | zx | nx | zy | ny | f | no |
-| :----: |:--:|:--:|:--:|:--:|:-:|:--:|
-| X      | 0  | 0  | 1  | 0  | 1 | 0  |
-| Y      | 1  | 0  | 0  | 0  | 1 | 0  |
-| X & Y  | 0  | 0  | 0  | 0  | 0 | 0  |
-| X \| Y | 0  | 1  | 0  | 1  | 0 | 1  |
-| ~X     | 0  | 1  | 1  | 0  | 1 | 0  |
-| ~Y     | 1  | 0  | 0  | 1  | 1 | 0  |
-| X + Y  | 0  | 0  | 0  | 0  | 1 | 0  |
-| X - Y  | 0  | 1  | 0  | 0  | 1 | 1  |
-| Y - X  | 0  | 0  | 0  | 1  | 1 | 1  |
-| 0      | 1  | 0  | 1  | 0  | 0 | 0  |
-| -1     | 1  | 1  | 1  | 0  | 1 | 0  |
-| 1      | 1  | 1  | 1  | 1  | 1 | 1  |
-| -X     | 0  | 0  | 1  | 1  | 1 | 1  |
-| -Y     | 1  | 1  | 0  | 0  | 1 | 1  |
-| X + 1  | 0  | 1  | 1  | 1  | 1 | 1  |
-| Y + 1  | 1  | 1  | 0  | 1  | 1 | 1  |
-| X - 1  | 0  | 0  | 1  | 1  | 1 | 0  |
-| Y - 1  | 1  | 1  | 0  | 0  | 1 | 0  |
-
-![Opcodes](05_Arithmetic_Logic_Unit/022_Opcodes.png)
-
-## Condition
-![Conditon](05_Arithmetic_Logic_Unit/023_Condition.png)
+![RAM](04_Memory/5_RAM.png)
 
 # Processor
-## Combined Memory
-![Combined Memory](06_Processor/024_Combined-Memory.png)
 
-## Instruction Decoder
-![Instruction Decoder](06_Processor/025_Instruction-Decoder.png)
+## Combined Memory
+![Combined Memory](06_Processor/1_Combined-Memory.png)
+
+## Instruction
+![Instruction](06_Processor/2_Instruction.png)
 
 ## Control Unit
-![Control Unit](06_Processor/026_Control-Unit.png)
+![Control Unit](06_Processor/3_Control-Unit.png)
 
 ## Computer
-![Computer](06_Processor/027_Computer.png)
+![Computer](06_Processor/4_Computer.png)
 
 ## Input and Output
-![Input and Output](06_Processor/028_Input-and-Output.png)
+![Input and Output](06_Processor/5_Input-and-Output.png)
 
 # Low level
+
 ## Machine code
 | ci |   |   | sm | zx | nx | zy | ny | f | no | a | d | \*a | lt | eq | gt |
 |:--:|:-:|:-:|:--:|:--:|:--:|:--:|:--:|:-:|:--:|:-:|:-:|:---:|:--:|:--:|:--:|
@@ -302,9 +356,9 @@ x and y = h
 | 1  | 0 | 0 | 0  | 0  | 1  | 1  | 1  | 1 | 1  | 0 | 1 | 0   | 0  | 0  | 0  |
 | 1  | 0 | 0 | 0  | 0  | 0  | 0  | 0  | 0 | 0  | 0 | 0 | 0   | 1  | 1  | 1  |
 
-![Machine code](07_Programming/029_Machine-code.png)
+![Machine code](07_Programming/1_Machine-code.png)
 
-## Assembler
+## Assembler Language
 ```asm
 # Assembler code 
 loop:
@@ -314,7 +368,13 @@ A = 0x7FFF
 A = loop
 JMP
 ```
-![Assembler](07_Programming/030_Assembler.png)
+![Assembler](07_Programming/2_Assembler-Language.png)
+
+## Assembler program
+```
+pass
+```
+![Assembler](07_Programming/3_Assembler-program.png)
 
 ## Escape Labyrinth
 ```asm
@@ -346,7 +406,7 @@ A = 0x7FFF
 A = begin
 JMP
 ```
-![Escape Labyrinth](07_Programming/031_Escape-Labyrinth.png)
+![Escape Labyrinth](07_Programming/4_Escape-Labyrinth.png)
 
 ## Display
 ```asm
@@ -357,6 +417,11 @@ A = A + 1
 *A = D
 A = 0x4200
 *A = D
+```
+
+## Network
+```
+pass
 ```
 
 # Stack machine
@@ -426,6 +491,17 @@ POP_A
 D = -A
 PUSH_D
 ```
+
+## And
+```asm
+pass
+```
+
+## Or
+```asm
+pass
+```
+# High-level language
 
 ## Tokenize
 | Type    | Match  | Grammar | Name   |
@@ -503,7 +579,7 @@ NEG
 
 ## Eq
 |Name|Number|
-|:==:|:====:|
+|:--:|:----:|
 | SP |   0  |
 ```asm
 
@@ -519,6 +595,32 @@ NEG
 
 ## If-goto
 
+# Memory
+
+## Push Memory
+
+## Pop Memory
+
+## Push Static
+
+## Pop Static
+
+# Functions
+
+## Call
+
+## Function
+
+## Return
+
+## Push argument
+
+## Pop argument
+
+## Push local
+
+## Pop local
+
 # Transistor level
 
 ## Nand (CMOS)
@@ -531,21 +633,27 @@ NEG
 # Logic
 
 ## Xnor
-![Xnor](09_Logic/02_Xnor.png)
+![Xnor](09_Logic/1_Xnor.png)
 
 ## Left Shift
-![Left Shift](09_Logic/03_Left_Shift.png)
+![Left Shift](09_Logic/2_Left_Shift.png)
+
+## Logical Right Shift
+![Logical Right Shift](09_Logic/3_Logical-Right-Shift.png)
+
+## Artithmetic Right Shift
+![Artithmetic Right Shift](09_Logic/4_Artithmetic-Right-Shift.png)
 
 ## Barrel Shift Left
-![Barrel Shift Left](09_Logic/04_Barrel_Shift_Left.png)
+![Barrel Shift Left](09_Logic/5_Barrel_Shift_Left.png)
 
 # Arithmetics
 
 ## Max
-![Max](10_Arithmetics/01_Max.png)
+![Max](1_Arithmetics/01_Max.png)
 
 ## Multiplication
-![Multiplication](10_Arithmetics/02_Multiplication.png)
+![Multiplication](2_Arithmetics/02_Multiplication.png)
 
 # Floating point
 
