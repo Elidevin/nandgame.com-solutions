@@ -316,11 +316,9 @@ l = (not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b
 ![Latch](1_Hardware/05_Memory/1_Latch.png)
 
 ## Data Flip-Flop
-![Data Flip-Flop](1_Hardware/05_Memory/2_Data-Flip-Flop_min_nands.png)
 ![Data Flip-Flop](1_Hardware/05_Memory/2_Data-Flip-Flop.png)
 
 ## Register
-![Register (minimal nand gates)](1_Hardware/05_Memory/3_Register_min_nands.png)
 ![Register](1_Hardware/05_Memory/3_Register.png)
 
 ## Counter
