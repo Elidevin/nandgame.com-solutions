@@ -1,4 +1,4 @@
-# Best solutions for [nandgame.com](http://nandgame.com/)
+# Solutions for [nandgame.com](http://nandgame.com/)
 
 ## Hardware
 * [Logic Gates](#logic-gates)
@@ -25,17 +25,17 @@
 	+ [Condition](#condition) (X nand gates)
 * [Memory](#memory)
 	+ [Latch](#latch) (4 nand gates)
-	+ [Data Flip-Flop](#data-flip-flop) (9 nand gates)
-	+ [Register](#register) (15 nand gates)
-	+ [Counter](#counter) (330 nand gates)
-	+ [RAM](#ram) (309 nand gates)
+	+ [Data Flip-Flop](#data-flip-flop) (10 nand gates)
+	+ [Register](#register) (20 nand gates)
+	+ [Counter](#counter) (370 nand gates)
+	+ [RAM](#ram) (388 nand gates)
 * [Processor](#processor)
 	+ [Combined Memory](#combined-memory) (240 + 79104 nand gates)
 	+ [Instruction](#instruction) (X nand gates)
 	+ [Control Unit](#control-unit) (1162 + 79104 nand gates)
 	+ [Computer](#computer) (1492 + 79104  nand gates)
 	+ [Input and Output](#input-and-output) (66 nand gates)
-## Software
+## Software _[deprecated]_
 * [Low level](#low-level)
 	+ [Machine code](#machine-code)
 	+ [Assembler Language](#assembler-language)
@@ -78,7 +78,7 @@
 	+ ~~[Pop argument](#pop-argument)~~
 	+ ~~[Push local](#push-local)~~
 	+ ~~[Pop local](#pop-local)~~
-## Optional Levels
+## Optional Levels _[deprecated]_
 * [Transistor level](#transistor-level)
 	+ [Nand (CMOS)](#nand-cmos)
 	+ ~~[Invert (CMOS)](#invert-cmos)~~
@@ -99,10 +99,10 @@
 	+ [Verify exponent](#verify-exponent) (111 nand gates)
 	+ [Align significands](#align-significands) (547 nand gates)
 	+ [Add signed magnitude](#add-signed-magnitude) (610 nand gates)
-	+ [Normalize underflow](#normalize-underflow)
-	+ [Pack floating-point value](#pack-floating-point-value)
-	+ [Floating-point multiplication](#floating-point-multiplication)
-	+ [Floating-point addition](#floating-point-addition)
+	+ ~~[Normalize underflow](#normalize-underflow)~~
+	+ ~~[Pack floating-point value](#pack-floating-point-value)~~
+	+ ~~[Floating-point multiplication](#floating-point-multiplication)~~
+	+ ~~[Floating-point addition](#floating-point-addition)~~
 * [Multitasking](#multitasking) `preview`
 	+ [Timer Trigger](#timer-trigger) `preview`
 	+ [Mode controller](#mode-controller) `preview`
@@ -199,6 +199,7 @@ x and y
 ```
 (x nand y) nand (x nand y)
 ```
+![And gate scheme](1_Hardware/01_Logic_Gates/and.svg)
 
 ![And](1_Hardware/01_Logic_Gates/3_And.png)
 
@@ -219,6 +220,11 @@ x and y
 
 ![Or](1_Hardware/01_Logic_Gates/4_Or.png)
 
+<details><summary>Base gates</summary>
+
+![Base gates](1_Hardware/01_Logic_Gates/base_gates.svg)
+</details>
+
 ## Xor
 | x | y | out |          |
 |:-:|:-:|:---:|:--------:|
@@ -227,13 +233,19 @@ x and y
 | 1 | 0 |  1  |  x & !y  |
 | 1 | 1 |  0  |          |
 
+![And gate scheme](1_Hardware/01_Logic_Gates/xor_nand-or-and.svg)
 ```
-(not(x) and y) or (x and not(y))
+(x nand y) and (x or y)
 ```
+
+<details><summary>The simplest possible solution</summary>
+
+![Xor gate scheme](1_Hardware/01_Logic_Gates/xor_nands.svg)
+</details>
+
 ```
 ((x nand y) nand x) nand ((x nand y) nand y)
 ```
-
 ![Xor](1_Hardware/01_Logic_Gates/5_Xor.png)
 
 # Arithmetics
@@ -272,8 +284,8 @@ h = (not(a) and b and c) or (a and not(b) and c) or (a and b and not(c)) or (a a
 ```
 l = (not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b and not(c)) or (a and not(b) and not(c)) or (a and b and c)
 ```
-
 ![Full Adder](1_Hardware/02_Arithmetics/2_Full-Adder.png)
+![Full Adder](1_Hardware/02_Arithmetics/2.1_nand-xor-gate.png)
 
 ## Multi-bit Adder
 ![Multi-bit Adder](1_Hardware/02_Arithmetics/3_Multi-bit-Adder.png)
@@ -306,10 +318,10 @@ l = (not(a) and not(b) and not(c)) or (not(a) and not(b) and c) or (not(a) and b
 ![Arithmetic Unit](1_Hardware/04_Arithmetic_Logic_Unit/2_Arithmetic_Unit.png)
 
 ## ALU
-![ALU](1_Hardware/04_Arithmetic_Logic_Unit/4_ALU.png)
+![ALU](1_Hardware/04_Arithmetic_Logic_Unit/3_ALU.png)
 
 ## Condition
-![Condition](1_Hardware/04_Arithmetic_Logic_Unit/5_Condition.png)
+![Condition](1_Hardware/04_Arithmetic_Logic_Unit/4_Condition.png)
 
 # Memory
 ## Latch
@@ -369,13 +381,13 @@ A = 0x7FFF
 A = loop
 JMP
 ```
-![Assembler](2_Software/01_Low_level/2_Assembler-Language.png)
+_~ not ready yet ~_
 
 ## Assembler program
 ```
 pass
 ```
-![Assembler](2_Software/01_Low_level/3_Assembler-program.png)
+_~ not ready yet ~_
 
 ## Escape Labyrinth
 ```asm
@@ -579,48 +591,60 @@ NEG
 # Conditionals
 
 ## Eq
-|Name|Number|
-|:--:|:----:|
-| SP |   0  |
-```asm
-
-```
+_~ not ready yet ~_
 
 ## Gt
+_~ not ready yet ~_
 
 ## Lt
+_~ not ready yet ~_
 
 ## Not
+_~ not ready yet ~_
 
 ## Goto
+_~ not ready yet ~_
 
 ## If-goto
+_~ not ready yet ~_
 
 # Memory
 
 ## Push Memory
+_~ not ready yet ~_
 
 ## Pop Memory
+_~ not ready yet ~_
 
 ## Push Static
+_~ not ready yet ~_
 
 ## Pop Static
+_~ not ready yet ~_
 
 # Functions
+_~ not ready yet ~_
 
 ## Call
+_~ not ready yet ~_
 
 ## Function
+_~ not ready yet ~_
 
 ## Return
+_~ not ready yet ~_
 
 ## Push argument
+_~ not ready yet ~_
 
 ## Pop argument
+_~ not ready yet ~_
 
 ## Push local
+_~ not ready yet ~_
 
 ## Pop local
+_~ not ready yet ~_
 
 
 
@@ -631,8 +655,10 @@ NEG
 ![Nand CMOS](3_Optional_Levels/01_Transistor_level/1_Nand_CMOS.png)
 
 ## Invert (CMOS)
+_~ not ready yet ~_
 
 ## Nor (CMOS)
+_~ not ready yet ~_
 
 # Logic
 
@@ -643,10 +669,9 @@ NEG
 ![Left Shift](3_Optional_Levels/02_Logic/2_Left_Shift.png)
 
 ## Logical Right Shift
-![Logical Right Shift](3_Optional_Levels/02_Logic/3_Logical-Right-Shift.png)
-
+_~ not ready yet ~_
 ## Artithmetic Right Shift
-![Artithmetic Right Shift](3_Optional_Levels/02_Logic/4_Artithmetic-Right-Shift.png)
+_~ not ready yet ~_
 
 ## Barrel Shift Left
 ![Barrel Shift Left](3_Optional_Levels/02_Logic/5_Barrel_Shift_Left.png)
@@ -680,11 +705,14 @@ NEG
 ![Add signed magnitude](3_Optional_Levels/04_Floating_point/6_Add_signed_magnitude.png)
 
 ## Normalize underflow
+_~ not ready yet ~_
 
 ## Pack float
+_~ not ready yet ~_
 
 ## Floating-point multiplication
+_~ not ready yet ~_
 
 ## Floating-point addition
-
+_~ not ready yet ~_
 
