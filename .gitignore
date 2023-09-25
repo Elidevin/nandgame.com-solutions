@@ -1,0 +1,6 @@
+*.bak
+*.log
+*.tmp
+.vs/
+.git/
+/.vs/slnx.sqlite
