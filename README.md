@@ -248,6 +248,10 @@ x and y
 ```
 ![Xor](1_Hardware/01_Logic_Gates/5_Xor.png)
 
+
+![True Table](1_Hardware/true-table.svg)
+
+
 # Arithmetics
 ## Half Adder
 | a | b | h | l |
