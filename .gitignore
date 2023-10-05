@@ -1,0 +1,7 @@
+*.bak
+*.log
+*.tmp
+.vs/
+.git/
+/.vs/*
+/.git/*
